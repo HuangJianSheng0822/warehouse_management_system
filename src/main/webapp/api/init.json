@@ -1,0 +1,57 @@
+{
+  "homeInfo": {
+    "title": "首页",
+    "href": "page/commodity.jsp"
+  },
+  "logoInfo": {
+    "title": "管理员",
+    "image": "images/OIP-C.jpg",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "常规管理",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "商品管理",
+          "href": "page/commodity.jsp",
+          "icon": "fa fa-gears",
+          "target": "_self"
+        },
+        {
+          "title": "员工管理",
+          "href": "page/user.jsp",
+          "icon": "fa fa-male",
+          "target": "_self"
+        },
+        {
+          "title": "添加员工",
+          "href": "page/addUser.jsp",
+          "icon": "fa fa-plus-square-o",
+          "target": "_self"
+        },
+        {
+          "title": "商品入库",
+          "href": "page/add.jsp",
+          "icon": "fa fa-file-text",
+          "target": "_self"
+        },
+        {
+          "title": "商品出库",
+          "href": "page/ex_com.jsp",
+          "icon": "fa fa-minus-square",
+          "target": "_self"
+        },
+        {
+          "title": "商品跟踪",
+          "href": "page/com_log.jsp",
+          "icon": "fa fa-area-chart",
+          "target": "_self"
+        }
+      ]
+        }
+  ]
+}
