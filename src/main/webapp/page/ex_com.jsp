@@ -43,11 +43,12 @@
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 
 <script>
-    layui.use(['form', 'layedit', 'laydate'], function () {
+    layui.use(['form', 'layedit', 'laydate','jquery'], function () {
         var form = layui.form
             , layer = layui.layer
             , layedit = layui.layedit
-            , laydate = layui.laydate;
+            , laydate = layui.laydate
+        ,$=layui.jquery;
 
         //自定义验证规则
         form.verify({
@@ -59,8 +60,19 @@
         });
         //监听提交
         form.on('submit(demo1)', function (data) {
-            layer.alert(JSON.stringify(data.field), {
-                title: '若数量充足则可成功取出'
+            $.ajax({
+                type:"post",
+                url:'${pageContext.request.contextPath}/isEx',
+                data:{
+                    comId:data.comId,
+                    exNum:data.exNum
+                },
+                success:function (data) {
+                    if (data==="no"){
+                        alert("数量不足")
+                        return false;
+                    }
+                }
             })
             return true;
         });

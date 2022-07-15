@@ -66,11 +66,12 @@
 <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
 
 <script>
-    layui.use(['form', 'layedit', 'laydate'], function () {
+    layui.use(['form', 'layedit', 'laydate','jquery'], function () {
         var form = layui.form
             , layer = layui.layer
             , layedit = layui.layedit
-            , laydate = layui.laydate;
+            , laydate = layui.laydate
+            ,$=layui.$;
 
         //自定义验证规则
         form.verify({
@@ -84,6 +85,19 @@
         form.on('submit(demo1)', function (data) {
             layer.alert(JSON.stringify(data.field), {
                 title: '最终的提交信息'
+            })
+            $.ajax({
+                type:"post",
+                url:'${pageContext.request.contextPath}/isHas',
+                data:{
+                    id:data.comId
+                },
+                success:function (data) {
+                    if (data==="no"){
+                        alert("当前Id已存在")
+                        return false;
+                    }
+                }
             })
             return true;
         });

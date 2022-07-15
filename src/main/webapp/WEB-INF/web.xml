@@ -110,7 +110,23 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>isHas</servlet-name>
+        <servlet-class>com.service.IsHas</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>isHas</servlet-name>
+        <url-pattern>/isHas</url-pattern>
+    </servlet-mapping>
 
+    <servlet>
+        <servlet-name>isEx</servlet-name>
+        <servlet-class>com.service.IsEx</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>isEx</servlet-name>
+        <url-pattern>/isEx</url-pattern>
+    </servlet-mapping>
 
 <servlet-mapping>
     <servlet-name>default</servlet-name>

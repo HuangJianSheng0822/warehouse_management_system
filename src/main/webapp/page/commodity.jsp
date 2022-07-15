@@ -147,6 +147,9 @@
             var data = obj.data;
             if (obj.event === 'edit') {
             	comId = data.comId;
+                comName = data.comName;
+                comNum = data.comNum;
+                comKind = data.comKind;
                 var index = layer.open({
                     title: '编辑',
                     type: 2,

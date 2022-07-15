@@ -120,6 +120,8 @@
             var data = obj.data;
             if (obj.event === 'edit') {
                 userId = data.userId;
+                userName = data.userName;
+                userSex = data.userSex;
                 var index = layer.open({
                     title: '编辑',
                     type: 2,

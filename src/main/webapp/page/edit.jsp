@@ -27,13 +27,13 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">商品名称</label>
                 <div class="layui-input-block">
-                    <input type="text" name="comName"  autocomplete="off" placeholder="商品名称" class="layui-input">
+                    <input type="text" id="comName" name="comName"  autocomplete="off" placeholder="商品名称" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
                 <label class="layui-form-label">商品数量</label>
                 <div class="layui-input-block">
-                    <input type="text" name="comNum"  autocomplete="off" placeholder="商品数量" class="layui-input">
+                    <input type="text" id="comNum" name="comNum"  autocomplete="off" placeholder="商品数量" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -72,6 +72,8 @@
             layer = layui.layer,
             $ = layui.$;
         $("#comId").val(parent.comId)
+        $("#comName").val(parent.comName)
+        $("#comNum").val(parent.comNum)
         //监听提交
         form.on('submit(saveBtn)', function (data) {
             var index = layer.alert(JSON.stringify(data.field), {

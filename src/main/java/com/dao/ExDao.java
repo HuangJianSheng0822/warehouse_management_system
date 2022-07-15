@@ -53,6 +53,7 @@ public class ExDao {
         }
     }
 
+
     public List<Ex> exList(String comId){
         ArrayList<Ex> objects = new ArrayList<> ();
         ResultSet resultSet = DBUtil.executeQuery ("select * from ex where comId=\'" + comId + "\'");

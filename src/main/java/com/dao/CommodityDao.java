@@ -94,4 +94,25 @@ public class CommodityDao {
         }
         return flag;
     }
+
+    public String getHas(String comId){
+        String flag=null;
+        ResultSet resultSet = DBUtil.executeQuery ("select comName from commodity where comId="+comId);
+        while (true){
+            try {
+                if (!resultSet.next ()) {
+                    break;
+                }
+            } catch (SQLException e) {
+                e.printStackTrace ();
+            }
+            try {
+                flag=resultSet.getString (1);
+            } catch (SQLException e) {
+                e.printStackTrace ();
+            }
+        }
+        return flag;
+    }
+
 }

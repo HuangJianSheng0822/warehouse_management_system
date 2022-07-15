@@ -27,7 +27,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">员工姓名</label>
                 <div class="layui-input-block">
-                    <input type="text" name="userName"  autocomplete="off" placeholder="员工姓名" class="layui-input">
+                    <input id="userName" type="text" name="userName"  autocomplete="off" placeholder="员工姓名" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -55,6 +55,8 @@
             layer = layui.layer,
             $ = layui.$;
         $("#userId").val(parent.userId)
+        $("#userName").val(parent.userId)
+
         //监听提交
         form.on('submit(saveBtn)', function (data) {
             var index = layer.alert(JSON.stringify(data.field), {
